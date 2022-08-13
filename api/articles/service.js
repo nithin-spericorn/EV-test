@@ -7,8 +7,13 @@ module.exports = {
     });
     return info ? info.dataValues : null;
   },
-  findAllArticles: async (req, res) => {
-    const Tickets = await db.articles.findAll({ limit: 5, order: [['updatedAt', 'DESC']]})
+  findAllArticles: async (user=false) => {
+    let Tickets={}
+    let value=user?user.isAdmin:false
+    if(value)
+     Tickets = await db.articles.findAll()
+     else
+     Tickets = await db.articles.findAll({ limit: 5, order: [['updatedAt', 'DESC']]})
     console.log("ddd",Tickets)
     return Tickets ? Tickets : {};
   },

@@ -26,7 +26,7 @@ exports.addArticles = async (req, res) => {
 };
 (exports.findAllArticles = async (req, res) => {
   try {
-    const info = await service.findAllArticles();
+    const info = await service.findAllArticles(req.user);
     /*let{content}=info
     console.log("content",content.content)
     text_truncate = function(str, length) {

@@ -32,3 +32,4 @@ http://localhost:4000/api/article  with post method and update with Put method
   "content":"Enjoy every moment in your life",
   "id":1
 }
+any user can retrive single article or all article .but only admin can create or modify the article.

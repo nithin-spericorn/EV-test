@@ -63,3 +63,21 @@ exports.UpdateArticle=async(req,res)=>{
     });
   }
 }
+exports.getOneArticle=async(req,res)=>{
+  try{
+    let {id}=req.params;
+    let info=await service.getOneArticle(id)
+    return res.json(
+      goodResponse(
+        { Article: info },
+        "Article successfully Get"
+      )
+    );
+  }catch(e){
+    return res.status(500).json({
+      success: false,
+      message: e.message,
+      data: {},
+    });
+  }
+}

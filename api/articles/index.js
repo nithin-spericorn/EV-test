@@ -5,6 +5,7 @@ const { veryfyToken, verifyAdmin } = require("../../middlewares/auth");
 
 router.post("", veryfyToken, verifyAdmin, controller.addArticles);
 router.get("", controller.findAllArticles);
+router.get("/:id",controller.getOneArticle)
 router.put("", veryfyToken, verifyAdmin, controller.UpdateArticle);
 
 module.exports = router;

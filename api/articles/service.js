@@ -20,4 +20,10 @@ module.exports = {
     if (info) res = await db.articles.findOne({ id: data.id });
     return res;
   },
+  getOneArticle:async(id)=>{
+    const info = await db.articles.findOne(
+      { where: { id: id } }
+    );
+    return info?info:{};
+  }
 };

@@ -8,7 +8,8 @@ module.exports = {
     return info ? info.dataValues : null;
   },
   findAllArticles: async (req, res) => {
-    const Tickets = await db.articles.findAll();
+    const Tickets = await db.articles.findAll({ limit: 5, order: [['updatedAt', 'DESC']]})
+    console.log("ddd",Tickets)
     return Tickets ? Tickets : {};
   },
   updateArticles: async (data) => {

@@ -11,10 +11,12 @@ module.exports = (sequelize, DataTypes) => {
       title: {
         type: DataTypes.STRING,
         allowNull: false,
+        maxLength:50
       },
       content: {
         type: DataTypes.STRING,
         allowNull: false,
+        maxLength: 100
       },
       PublishDate: {
         type: DataTypes.STRING,

@@ -1,0 +1,71 @@
+{
+  "info": {
+    "title": "Library Management API Documentation",
+    "version": "1",
+    "description": "API Documentation"
+  },
+  "host": "localhost:4000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "swagger": "2.0",
+  "paths": {
+    "/api/book": {
+      "post": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Books"
+        ],
+        "description": "Add Book",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request body",
+            "description": "All fields are required.",
+            "type": "object",
+            "schema": {
+              "properties": {
+                "bookName": {
+                  "type": "string",
+                  "required": "true,",
+                  "example": "Macbeth"
+                },
+                "author": {
+                  "type": "string,",
+                  "required": "true,",
+                  "example": "William Shakespeare"
+                },
+                "price": {
+                  "type": "number,",
+                  "required": "true,",
+                  "example": 1000
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Book details added"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "responses": {},
+  "parameters": {},
+  "tags": []
+}

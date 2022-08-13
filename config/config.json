@@ -1,0 +1,21 @@
+{
+    "development": {
+        "database": {
+            "username": "root",
+            "password": "password",
+            "database": "article",
+            "host": "localhost",
+            "dialect": "mysql"
+        },
+        "server": {
+            "host": "localhost",
+            "port": "4000"
+        },
+        "jwt": {
+            "secretkey": "8fTnPLyeAWS7FXOWNs2WzKsG9",
+            "expires": 2400
+        },
+        "websiteHost": "http://localhost:4000",
+        "domain": "localhost:4000"
+    }
+}
